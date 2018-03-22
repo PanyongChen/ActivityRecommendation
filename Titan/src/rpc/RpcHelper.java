@@ -55,5 +55,17 @@ public class RpcHelper {
 			return null;
 		}
 
+		// Converts a list of Item objects to JSONArray.
+		  public static JSONArray getJSONArray(List<Item> items) {
+		    JSONArray result = new JSONArray();
+		    try {
+		      for (Item item : items) {
+		        result.put(item.toJSONObject());
+		      }
+		    } catch (Exception e) {
+		      e.printStackTrace();
+		    }
+		    return result;
+		  }
 
 }
